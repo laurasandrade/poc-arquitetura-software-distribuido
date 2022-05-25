@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+        <PackageReference Include="Bogus" Version="32.0.2" />
+        <PackageReference Include="FluentAssertions" Version="5.10.3" />
+        <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="MockQueryable.Moq" Version="3.1.3" />
+        <PackageReference Include="Moq" Version="4.15.2" />
+        <PackageReference Include="nunit" Version="3.13.0" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\poc.pos.arquiteturasoftwaredistribuido.api.Domain\poc.pos.arquiteturasoftwaredistribuido.api.Domain.csproj" />
+    <ProjectReference Include="..\poc.pos.arquiteturasoftwaredistribuido.api.Infra.Entity\poc.pos.arquiteturasoftwaredistribuido.api.Infra.Entity.csproj" />
+    <ProjectReference Include="..\poc.pos.arquiteturasoftwaredistribuido.api.Service\poc.pos.arquiteturasoftwaredistribuido.api.Service.csproj" />
+  </ItemGroup>
+
+</Project>

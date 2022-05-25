@@ -1,0 +1,59 @@
+<div class="container-fluid" *ngIf="!mostrarLoader">
+  <div class="row">
+    <app-navbar></app-navbar>
+    <main class="container-fluid col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="pt-3 pb-2 mb-3 border-bottom">
+        <h1>Novo Médico</h1>
+      </div>
+
+      <div class="container">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <form [formGroup]="novoClienteForm" (ngSubmit)="novo()">
+            <div class="row">
+              <div class="col-sm">
+                <label for="especialidade">Selecione a especialidade</label>
+                <select class="form-select" formControlName="idEspecialidade" aria-label="Selecione a especialidade">
+                  <option *ngFor="let item of listaEspec" value="{{item.idEspecialidade}}">{{item.nome}}</option>
+                </select>
+              </div>
+              <div class="col-sm">
+                <label for="nome">Nome</label>
+                <input type="text" formControlName="nome" class="form-control" placeholder="Informe o nome">
+              </div>
+              <!-- <div class="col-sm">
+                <label for="crm">CRM</label>
+                <input type="text" formControlName="crm" class="form-control" placeholder="Informe o CRM">
+              </div> -->
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-sm">
+                <label for="email">Email</label>
+                <input type="email" formControlName="email" class="form-control" placeholder="Informe o email">
+              </div>
+              <div class="col-sm">
+                <label for="telefone">Telefone</label>
+                <input type="text" formControlName="telefone" class="form-control" placeholder="Informe o telefone">
+              </div>
+              <!-- <div class="col-sm">
+                <label for="obs">Observação</label>
+                <input type="text" formControlName="obs" class="form-control" placeholder="Demais informações">
+              </div> -->
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-sm">
+                <a class="btn btn-secondary mr-3" routerLink="/painel-admin">Voltar </a>
+                <button type="submit" [disabled]="!novoClienteForm.valid" class="btn btn-success">Cadastrar</button>
+              </div>
+              <div class="col-6"></div>
+              <div class="col-sm"></div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<app-loader *ngIf="mostrarLoader"></app-loader>

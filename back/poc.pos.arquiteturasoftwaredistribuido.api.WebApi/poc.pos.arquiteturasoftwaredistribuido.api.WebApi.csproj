@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UserSecretsId>546be152-d861-4b77-9717-502e060f9ea6</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\poc.pos.arquiteturasoftwaredistribuido.api.Domain\poc.pos.arquiteturasoftwaredistribuido.api.Domain.csproj" />
+        <ProjectReference Include="..\poc.pos.arquiteturasoftwaredistribuido.api.Infra.Entity\poc.pos.arquiteturasoftwaredistribuido.api.Infra.Entity.csproj" />
+        <ProjectReference Include="..\poc.pos.arquiteturasoftwaredistribuido.api.Service\poc.pos.arquiteturasoftwaredistribuido.api.Service.csproj" />
+    </ItemGroup>
+
+</Project>

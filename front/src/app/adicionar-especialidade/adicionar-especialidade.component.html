@@ -1,0 +1,36 @@
+<div class="container-fluid" *ngIf="!mostrarLoader">
+  <div class="row">
+    <app-navbar></app-navbar>
+    <main class="container-fluid col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="pt-3 pb-2 mb-3 border-bottom">
+        <h1>Cadastrar Nova Especialidade</h1>
+      </div>
+
+      <div class="container">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <form [formGroup]="adicionarEspecialidadeForm" (ngSubmit)="novo()">
+            <div class="row mt-3">
+              <div class="col-sm">
+                <label for="nome">Nome</label>
+                <input type="text" formControlName="nome" class="form-control"
+                  placeholder="Informe o nome especialidade">
+              </div>
+              <div class="col-sm"></div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-sm">
+                <a class="btn btn-secondary mr-3" routerLink="/painel-admin">Voltar </a>
+                <button type="submit" [disabled]="!adicionarEspecialidadeForm.valid"
+                  class="btn btn-success">Cadastrar</button>
+              </div>
+              <div class="col-6"></div>
+              <div class="col-sm"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<app-loader *ngIf="mostrarLoader"></app-loader>
